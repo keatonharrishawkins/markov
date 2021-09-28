@@ -79,7 +79,7 @@ public class BaseWordMarkov implements MarkovInterface<WordGram> {
 		ArrayList<String> sb = new ArrayList<>();
 		int index = myRandom.nextInt(myWords.length - myOrder + 1);
 		WordGram current = new WordGram(myWords,index,myOrder);
-		
+
 		sb.add(current.toString());
 		for(int k=0; k < length-myOrder; k += 1){
 			ArrayList<String> follows = getFollows(current);
@@ -87,7 +87,7 @@ public class BaseWordMarkov implements MarkovInterface<WordGram> {
 				break;
 			}
 			index = myRandom.nextInt(follows.size());
-			
+
 			String nextItem = follows.get(index);
 			if (nextItem.equals(PSEUDO_EOS)) {
 				//System.out.println("PSEUDO");
@@ -97,6 +97,7 @@ public class BaseWordMarkov implements MarkovInterface<WordGram> {
 			current = current.shiftAdd(nextItem);
 		}
 		return String.join(" ", sb);
+
 	}
 	@Override
 	public int getOrder() {

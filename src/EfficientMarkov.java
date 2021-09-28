@@ -6,7 +6,6 @@ public class EfficientMarkov extends BaseMarkov {
 	public EfficientMarkov(){
 		this(3);
 		myMap.clear();
-
 	}
 
 	public EfficientMarkov(int order) {
