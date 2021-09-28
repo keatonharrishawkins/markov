@@ -38,7 +38,7 @@ public class MarkovDriver {
 		String text = TextSource.textFromFile(f);
 
 		// only one line below should be uncommented
-		MarkovInterface<String> standard = new BaseMarkov();
+		MarkovInterface<String> standard = new EfficientMarkov();
 		//MarkovInterface<String> efficient = new EfficientMarkov();
 		//MarkovInterface<WordGram> wmm = new BaseWordMarkov();
 		//MarkovInterface<WordGram> ewm = new EfficientWordMarkov();
